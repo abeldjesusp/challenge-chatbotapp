@@ -12,9 +12,8 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label for="amount">Amount</label>
-                  <input type="number" class="form-control" id="amount" name="amount" >
+                  <input type="number" class="form-control" id="amount" name="amount" max="{{ $balance }}">
                 </div>
-                
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea class="form-control" id="description" name="description" rows="3"></textarea>

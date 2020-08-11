@@ -26,7 +26,9 @@ class TransactionController extends Controller
      */
     public function create($id)
     {
-        return view('transaction.create', compact('id'));
+        $account = Account::find($id);
+        $balance = (float)$account->balance;
+        return view('transaction.create', compact('id', 'balance'));
     }
 
     /**
