@@ -19,6 +19,7 @@
                     <label for="description">Description</label>
                     <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                 </div>
+                <input type="text" value="{{ $id }}" hidden name="id">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>     

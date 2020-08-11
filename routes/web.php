@@ -35,6 +35,7 @@ Route::resource('accounts', 'AccountController');
 
 // Transactions
 Route::resource('transactions', 'TransactionController');
+Route::get('transactions/{id}/create', 'TransactionController@create');
 Route::get('accounts/transactions/{account}', 'TransactionController@accountTransactions')
      ->name('account-transactions');
 

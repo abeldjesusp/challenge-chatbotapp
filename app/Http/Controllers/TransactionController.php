@@ -24,9 +24,9 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('transaction.create');
+        return view('transaction.create', compact('id'));
     }
 
     /**
@@ -37,7 +37,7 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        $account = Account::find(1)->first();
+        $account = Account::find($request->id);
         $balance = (float)$account->balance;
         
         $validatedData = $request->validate([
@@ -51,13 +51,14 @@ class TransactionController extends Controller
             'amount' => $request->amount,
             'balance' => $balance,
             'description' => $request->description,
-            'account_id' => 1
+            'account_id' => $request->id
         ]);
             
             
         if($transaction->save()) {
             $account->balance = $balance;
             $account->save();
+            return redirect('accounts/transactions/'.$request->id);
         }
     }
 

@@ -7,7 +7,7 @@
             <h1>Transactions</h1>
         </div>
         <div class="col-sm-2">
-            <a href="{{ url('/transactions/create/') }}" class="btn btn-primary">Make transaction</a>
+            <a href="{{ url('/transactions/'.Request::segment(3)).'/create' }}" class="btn btn-primary">Make transaction</a>
         </div>
     </div>
     <div class="row">

@@ -27,3 +27,4 @@ I chose this api https://www.amdoren.com/currency-api/
 
 ## Bot
 I chose this framework to build the chatbot https://botman.io/2.0/welcome
+The bot doesn't work yet
